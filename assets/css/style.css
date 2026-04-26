@@ -1,0 +1,268 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+/* nav start */
+nav {
+    width: 100vw;
+    height: 90px;
+    padding: 0 70px;
+    background-color: #EFF8FF;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        width: 69px;
+    }
+
+    ul {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+        font-weight: 500;
+        color: #222222;
+        
+        li {
+            cursor:pointer;
+        }
+    }
+
+    .login {
+        width: 135px;
+        height: 38px;
+        border-radius: 6px;
+        background-color: #025595;
+        color: #F5F5F5;
+        border: none;
+        cursor: pointer;
+    }
+
+    .menuIcon {
+        border: none;
+        background: none;
+        cursor: pointer;
+        display: none;
+    }
+}
+
+/* hero start */
+.hero {
+    height: 100vh;
+    background-color: #EFF8FF;
+    background-image: url("./../img/heroBg.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    padding-top: 122px;
+
+    h1 {
+        max-width: 549px;
+        margin-left: 70px;
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 80px;
+        color: #222222;
+    }
+
+    .description {
+        max-width: 423px;
+        margin: 20px 70px 50px;
+        color: #22222280;
+        line-height: 26px;
+    }
+
+    .info {
+        max-width: 868px;
+        margin-left: 70px;
+        padding: 20px 58px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #FFFFFFCC;
+        backdrop-filter: blur(20px);
+        border-radius: 16px;
+
+        .card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .icon {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: #0255953a;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            h2 {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+                color: #222222;
+            }
+            p{
+                margin-top: 10px;
+                color: #22222280;
+            }
+        }
+    }
+}
+
+/* works section start */
+
+.works {
+    padding: 94px 70px;
+
+    h1 {
+        font-weight: 700;
+        font-size: 39px;
+        color: #222222;
+    }
+
+    p {
+        color: #22222280;
+    }
+
+    .container {
+        margin-top: 56px;
+        display: flex;
+        justify-content: space-between;
+
+        .card {
+            max-width: 380px;
+            padding: 30px 40px 80px;
+            cursor: pointer;
+            border-radius: 15px;
+
+            h2 {
+                font-weight: 600;
+                font-size: 22px;
+                margin-bottom: 10px;
+                &::before {
+                    display: block;
+                    margin-bottom: 20px;
+                }
+
+            }
+
+            &:nth-child(1){
+                h2 {
+                    &::before{
+                        content: url("./../img/searchHouseBlue.svg");
+                    }
+                }
+            }
+
+            &:nth-child(2){
+                h2 {
+                    &::before{
+                        content: url("./../img/selectHouseBlue.svg");
+                    }
+                }
+            }
+
+            &:nth-child(3){
+                h2 {
+                    &::before{
+                        content: url("./../img/confirmHouseBlue.svg");
+                    }
+                }
+            }
+
+            &:hover {
+                background-color: #025595;
+                color: #FFFFFF;
+
+                p {
+                    color: #FFFFFF;
+                }
+
+                &:nth-child(1){
+                    h2 {
+                        &::before{
+                            content: url("./../img/searchHouseWhite.svg");
+                        }
+                    }
+                }
+
+                &:nth-child(2){
+                    h2 {
+                        &::before{
+                            content: url("./../img/selectHouseWhite.svg");
+                        }
+                    }
+                }
+
+                &:nth-child(3){
+                    h2 {
+                        &::before{
+                            content: url("./../img/confirmHouseWhite.svg");
+                        }
+                    }
+                }
+                }
+        }
+    }
+}
+
+@media screen and (max-width : 992px) {
+    nav {
+        padding: 0 20px;
+        ul , .login {
+            display: none;
+        }
+        .menuIcon {
+            display: block;
+        }
+    }
+
+    .hero {
+        h1 , .description {
+            margin-left: 20px;
+        }
+        h1 {
+            font-size: 35px;
+            line-height: 46px;
+        }
+        .info {
+            margin: 0;
+            flex-direction: column;
+            align-items: start;
+            padding: 20px;
+            gap: 24px;
+        }
+    }
+
+    .works { 
+        padding: 64px 20px;
+        .container {
+            flex-direction: column;
+            .card {
+                max-width: 100%;
+
+                &:nth-child(2){
+                    background-color: #025595;
+                    color: #FFFFFF;
+                    h2 {
+                        &::before{
+                            content: url("./../img/selectHouseWhite.svg");
+                        }
+                    }
+
+                    p {
+                        color: #FFFFFF;
+                    }
+                }
+            }
+        }
+    }
+}
